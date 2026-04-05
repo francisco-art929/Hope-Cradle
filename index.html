@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hope Cradle Ghana | Small Gifts, Big Impact</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#fdfcf8] text-gray-800 font-sans">
+
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 p-4">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center gap-4">
+            
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-green-600 rounded-full shadow-inner"></div>
+                <h1 class="text-xl font-black tracking-tighter text-gray-900 uppercase">Hope Cradle</h1>
+            </div>
+
+            <div class="flex items-center gap-4 text-[13px] md:text-sm font-bold text-gray-600">
+                <a href="https://wa.me/233538335965" target="_blank" class="flex items-center gap-1 hover:text-green-600 transition-colors">
+                    <span>💬 WhatsApp</span>
+                </a>
+                <a href="tel:+233546897988" class="flex items-center gap-1 hover:text-green-600 transition-colors border-l pl-4 border-gray-200">
+                    <span>📞 Call Me</span>
+                </a>
+            </div>
+
+            <button onclick="document.getElementById('donation-box').scrollIntoView({behavior: 'smooth'})" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full font-bold transition-all shadow-md text-sm active:scale-95">
+                Donate Now
+            </button>
+        </div>
+    </nav>
+
+    <header class="relative py-12 px-5 overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center">
+            <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">
+                📍 Based in Ghana
+            </span>
+
+            <h2 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+                Help us put a <br> <span class="text-green-600">Smile on a Child.</span>
+            </h2>
+            
+            <p class="text-gray-600 max-w-xl mx-auto text-lg mb-10 leading-relaxed">
+                We believe no orphan should go a day without a meal. Join us as we distribute food, water, and hope to local orphanages every month.
+            </p>
+
+            <div class="max-w-4xl mx-auto bg-black rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.2)] aspect-video relative group">
+                <video class="w-full h-full object-contain opacity-90 hover:opacity-100 transition-opacity" autoplay muted loop controls>
+                    <source src="video.mp4.MOV" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <p class="text-white text-xs font-light tracking-widest uppercase opacity-30">Our Latest Visit</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-20 px-5 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            
+            <div>
+                <h3 class="text-3xl font-bold mb-4">Why your GHS 10 matters...</h3>
+                <p class="text-gray-600 mb-6 italic">"I visited the orphanage last week. I saw kids with so much potential but very little support. Just one bag of rice can feed a whole room for days."</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3"><span class="text-green-500 font-bold">✓</span><p class="text-sm font-medium">Buying Food & Clean Water</p></div>
+                    <div class="flex items-center gap-3"><span class="text-green-500 font-bold">✓</span><p class="text-sm font-medium">Paying for School Supplies</p></div>
+                    <div class="flex items-center gap-3"><span class="text-green-500 font-bold">✓</span><p class="text-sm font-medium">100% Transparency (Videos & Receipts)</p></div>
+                </div>
+            </div>
+
+            <div id="donation-box" class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden transition-all scroll-mt-20">
+                <div class="flex border-b">
+                    <button onclick="showTab('money')" id="tab-money" class="flex-1 py-4 font-bold text-green-600 border-b-2 border-green-600 bg-green-50 transition-all">Give Money</button>
+                    <button onclick="showTab('items')" id="tab-items" class="flex-1 py-4 font-bold text-gray-500 hover:bg-gray-50 transition-all">Give Items</button>
+                </div>
+
+                <div class="p-8">
+                    <div id="content-money" class="block">
+                        <h4 class="text-xl font-bold mb-6 text-center text-gray-800 text-sm uppercase tracking-widest">Select Amount (GHS)</h4>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <button onclick="selectAmount(10, this)" class="amt-btn border-2 border-green-600 text-green-600 py-3 rounded-xl font-bold hover:bg-green-600 hover:text-white transition-all">10</button>
+                            <button onclick="selectAmount(50, this)" class="amt-btn border-2 border-green-600 text-green-600 py-3 rounded-xl font-bold hover:bg-green-600 hover:text-white transition-all">50</button>
+                            <button onclick="selectAmount(100, this)" class="amt-btn border-2 border-green-600 text-green-600 py-3 rounded-xl font-bold hover:bg-green-600 hover:text-white transition-all">100</button>
+                            <button onclick="toggleCustom()" id="custom-btn" class="amt-btn border-2 border-gray-200 text-gray-400 py-3 rounded-xl font-bold transition-all">Custom</button>
+                        </div>
+
+                        <div id="custom-input-area" class="hidden mb-6">
+                            <input type="number" id="custom-amount" placeholder="Enter amount GHS" class="w-full p-4 border-2 border-green-600 rounded-xl font-bold text-center outline-none">
+                        </div>
+
+                        <button onclick="handlePayment()" class="w-full bg-green-600 text-white py-4 rounded-xl font-black text-lg shadow-lg hover:bg-green-700 active:scale-95 transition-all uppercase tracking-wider">
+                            Donate Now
+                        </button>
+                    </div>
+
+                    <div id="content-items" class="hidden text-center py-4">
+                        <div class="text-5xl mb-4">📦</div>
+                        <h4 class="text-xl font-bold mb-2 text-gray-800">Donate Food or Clothes</h4>
+                        <p class="text-gray-600 text-sm mb-8 leading-relaxed px-4">
+                            Have rice, oil, or gently used clothes? Click below and I will arrange to pick them up from you personally!
+                        </p>
+                        <a href="https://wa.me/233538335965?text=Hello! I have some items to donate to the orphans." target="_blank" class="inline-block w-full bg-blue-500 text-white py-4 rounded-xl font-black text-lg shadow-lg hover:bg-blue-600 active:scale-95 transition-all uppercase tracking-wider">
+                            WhatsApp for Pickup
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12 px-5 text-center md:text-left">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div>
+                <h4 class="text-lg font-bold mb-4 text-green-500 uppercase">Hope Cradle Ghana</h4>
+                <p class="text-gray-400 text-sm leading-relaxed">Helping Ghanaian orphans get the food and education they deserve.</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Contact</h4>
+                <p class="text-gray-400 text-sm">💬 WhatsApp: +233 53 833 5965</p>
+                <p class="text-gray-400 text-sm">📞 Call: +233 54 689 7988</p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold mb-4">Our Promise</h4>
+                <p class="text-gray-400 text-sm">100% transparency. Monthly visits with video proof.</p>
+            </div>
+        </div>
+        <p class="mt-10 text-gray-600 text-xs uppercase tracking-widest">&copy; 2026 Hope Cradle Ghana. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let selectedAmount = 0;
+
+        function showTab(type) {
+            const moneyContent = document.getElementById('content-money');
+            const itemsContent = document.getElementById('content-items');
+            const moneyTab = document.getElementById('tab-money');
+            const itemsTab = document.getElementById('tab-items');
+
+            if (type === 'money') {
+                moneyContent.classList.remove('hidden');
+                itemsContent.classList.add('hidden');
+                moneyTab.className = "flex-1 py-4 font-bold text-green-600 border-b-2 border-green-600 bg-green-50 transition-all";
+                itemsTab.className = "flex-1 py-4 font-bold text-gray-500 hover:bg-gray-50 transition-all";
+            } else {
+                moneyContent.classList.add('hidden');
+                itemsContent.classList.remove('hidden');
+                itemsTab.className = "flex-1 py-4 font-bold text-green-600 border-b-2 border-green-600 bg-green-50 transition-all";
+                moneyTab.className = "flex-1 py-4 font-bold text-gray-500 hover:bg-gray-50 transition-all";
+            }
+        }
+
+        function selectAmount(amt, btn) {
+            selectedAmount = amt;
+            document.getElementById('custom-input-area').classList.add('hidden');
+            
+            // Reset all buttons
+            document.querySelectorAll('.amt-btn').forEach(b => {
+                b.classList.remove('bg-green-600', 'text-white', 'border-green-600');
+                b.classList.add('border-gray-200', 'text-gray-400');
+            });
+
+            // Highlight selected
+            btn.classList.add('bg-green-600', 'text-white', 'border-green-600');
+            btn.classList.remove('border-gray-200', 'text-gray-400');
+        }
+
+        function toggleCustom() {
+            selectedAmount = 0;
+            document.getElementById('custom-input-area').classList.toggle('hidden');
+            
+            // Clear other buttons
+            document.querySelectorAll('.amt-btn').forEach(b => {
+                b.classList.remove('bg-green-600', 'text-white', 'border-green-600');
+                b.classList.add('border-gray-200', 'text-gray-400');
+            });
+            
+            document.getElementById('custom-btn').classList.add('border-green-600', 'text-green-600');
+            document.getElementById('custom-amount').focus();
+        }
+
+        function handlePayment() {
+            const customAmt = document.getElementById('custom-amount').value;
+            const finalAmount = customAmt > 0 ? customAmt : selectedAmount;
+
+            if (finalAmount <= 0) {
+                alert("Please select or enter an amount first!");
+                return;
+            }
+
+            alert("Redirecting to pay GHS " + finalAmount + "... (Paystack setup coming next!)");
+        }
+    </script>
+</body>
+</html>
