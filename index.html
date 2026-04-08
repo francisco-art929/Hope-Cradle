@@ -36,8 +36,10 @@
             </p>
             
             <div class="max-w-4xl mx-auto bg-black rounded-3xl overflow-hidden shadow-2xl aspect-video relative mb-16">
-                <video class="w-full h-full object-cover" autoplay muted loop controls playsinline>
+                <video class="w-full h-full object-contain" controls playsinline>
+                    <source src="video.mp4.MOV" type="video/quicktime">
                     <source src="video.mp4.MOV" type="video/mp4">
+                    Your browser does not support the video tag.
                 </video>
             </div>
 
@@ -67,48 +69,42 @@
                 <div class="space-y-6">
                     <div class="flex items-start gap-4">
                        <div class="w-10 h-10 bg-green-100 flex items-center justify-center rounded-full text-green-600 font-bold shrink-0">1</div>
-                        <p class="text-sm lea ding-relaxed"><span class="font-bold block text-gray-900">Food & Nutrition</span> We buy bags of rice, oil, and essentials.</p>
-                            </div>
-
-                     <div class="flex items-start gap-4">
-
-                        <div class="w-10 h-10 bg-green-100 flex items-center justify-center rounded-full text-green-600 font-bold shrink-0">2</div>
-
-                        <p class="text-sm leading-relaxed"><span class="font-bold block text-gray-900">Education Support</span> We help pay for fees and supplies so every child can learn.</p>
-
+                        <p class="text-sm leading-relaxed"><span class="font-bold block text-gray-900">Food & Nutrition</span> We buy bags of rice, oil, and essentials.</p>
                     </div>
-
                     <div class="flex items-start gap-4">
-
-                        <div class="w-10 h-10 bg-green-100 flex items-center justify-center rounded-full text-green-600 font-bold shrink-0">3</div>
-
-                        <p class="text-sm leading-relaxed"><span class="font-bold block text-gray-900">True Transparency</span> We post videos of every visit so you see the impact of your GHS.</p>
-
+                        <div class="w-10 h-10 bg-green-100 flex items-center justify-center rounded-full text-green-600 font-bold shrink-0">2</div>
+                        <p class="text-sm leading-relaxed"><span class="font-bold block text-gray-900">Education Support</span> We help pay for fees and supplies so every child can learn.</p>
                     </div>
-
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-green-100 flex items-center justify-center rounded-full text-green-600 font-bold shrink-0">3</div>
+                        <p class="text-sm leading-relaxed"><span class="font-bold block text-gray-900">True Transparency</span> We post videos of every visit so you see the impact of your GHS.</p>
+                    </div>
                 </div>
-
             </div>
-
-
 
             <div class="bg-white rounded-[2rem] shadow-2xl border border-gray-100 overflow-hidden">
                 <div class="flex border-b">
-                    <button onclick="showTab('money')" id="tab-money" class="flex-1 py-5 font-bold text-green-600 border-b-4 border-green-600 bg-green-50">Donate GHS</button>
-                    <button onclick="showTab('items')" id="tab-items" class="flex-1 py-5 font-bold text-gray-400">Donate Items</button>
+                    <button onclick="showTab('money')" id="tab-money" class="flex-1 py-5 font-bold text-green-600 border-b-4 border-green-600 bg-green-50 transition-all">Donate GHS</button>
+                    <button onclick="showTab('items')" id="tab-items" class="flex-1 py-5 font-bold text-gray-400 transition-all">Donate Items</button>
                 </div>
                 <div class="p-8 md:p-10">
                     <div id="content-money">
-                        <div class="grid grid-cols-2 gap-3 md:gap-4 mb-8">
-                            <button onclick="selectAmount(10, this)" class="amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold">10</button>
-                            <button onclick="selectAmount(50, this)" class="amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold">50</button>
-                            <button onclick="selectAmount(100, this)" class="amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold">100</button>
-                            <button onclick="toggleCustom()" id="custom-btn" class="amt-btn border-2 border-gray-200 text-gray-400 py-4 rounded-2xl font-bold">Custom</button>
+                        <div class="grid grid-cols-2 gap-3 mb-8">
+                            <button onclick="selectAmount(10, this)" class="amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold transition-all">10</button>
+                            <button onclick="selectAmount(50, this)" class="amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold transition-all">50</button>
+                            <button onclick="selectAmount(100, this)" class="amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold transition-all">100</button>
+                            <button onclick="toggleCustom()" id="custom-btn" class="amt-btn border-2 border-gray-200 text-gray-400 py-4 rounded-2xl font-bold transition-all">Custom</button>
                         </div>
                         <div id="custom-input-area" class="hidden mb-8">
                             <input type="number" id="custom-amount" placeholder="Amount" class="w-full p-5 border-2 border-green-600 rounded-2xl font-bold text-center outline-none">
                         </div>
                         <button onclick="payWithPaystack()" class="w-full bg-green-600 text-white py-5 rounded-2xl font-black text-xl shadow-lg active:scale-95 transition-all">SEND DONATION</button>
+                    </div>
+
+                    <div id="content-items" class="hidden text-center py-6">
+                        <div class="text-5xl mb-4">📦</div>
+                        <p class="text-gray-600 mb-6 font-medium">Have food, clothes, or school supplies? We'd love to help you get them to the children.</p>
+                        <a href="https://wa.me/233538335965" target="_blank" class="inline-block w-full bg-blue-500 text-white py-5 rounded-2xl font-black text-xl shadow-lg active:scale-95 transition-all">CHAT ON WHATSAPP</a>
                     </div>
                 </div>
             </div>
@@ -116,9 +112,11 @@
     </section>
 
     <section class="py-20 px-5 max-w-4xl mx-auto border-t border-gray-100">
-        <div class="flex justify-between items-center mb-12">
-            <h3 class="text-2xl font-black text-gray-900">Community Support</h3>
-               <p class="text-gray-500 text-sm">Join others in sending love to the children.</p>
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4 mb-12">
+            <div>
+                <h3 class="text-2xl font-black text-gray-900">Community Support</h3>
+                <p class="text-gray-500 text-sm">Join others in sending love to the children.</p>
+            </div>
             <div class="flex gap-4 items-center bg-gray-50 px-4 py-2 rounded-xl border border-gray-100">
                 <button id="like-btn" class="flex items-center gap-1">
                     <span>❤️</span> <span id="like-count" class="font-bold">0</span>
@@ -129,7 +127,7 @@
 
         <div class="mb-12 bg-white p-6 rounded-[2rem] border border-gray-100 shadow-xl">
             <input type="text" id="comment-name" placeholder="Your Full Name" class="w-full p-4 mb-4 bg-gray-50 rounded-xl outline-none focus:ring-2 focus:ring-green-600">
-            <textarea id="comment-text" placeholder="Write your heartfelt messafe here..." class="w-full p-4 mb-4 bg-gray-50 rounded-xl outline-none focus:ring-2 focus:ring-green-600 h-24"></textarea>
+            <textarea id="comment-text" placeholder="Write your heartfelt message here..." class="w-full p-4 mb-4 bg-gray-50 rounded-xl outline-none focus:ring-2 focus:ring-green-600 h-24"></textarea>
             <button id="post-comment" class="w-full bg-gray-900 text-white py-4 rounded-xl font-bold">Post Message</button>
         </div>
 
@@ -152,13 +150,22 @@
     <script>
         let selectedAmount = 0;
         function showTab(type) {
-            document.getElementById('content-money').classList.toggle('hidden', type !== 'money');
-            document.getElementById('tab-money').className = type === 'money' ? "flex-1 py-5 font-bold text-green-600 border-b-4 border-green-600 bg-green-50" : "flex-1 py-5 font-bold text-gray-400";
+            const m = document.getElementById('content-money'), i = document.getElementById('content-items');
+            const mt = document.getElementById('tab-money'), it = document.getElementById('tab-items');
+            if (type === 'money') {
+                m.classList.remove('hidden'); i.classList.add('hidden');
+                mt.className = "flex-1 py-5 font-bold text-green-600 border-b-4 border-green-600 bg-green-50 transition-all";
+                it.className = "flex-1 py-5 font-bold text-gray-400 transition-all";
+            } else {
+                m.classList.add('hidden'); i.classList.remove('hidden');
+                it.className = "flex-1 py-5 font-bold text-green-600 border-b-4 border-green-600 bg-green-50 transition-all";
+                mt.className = "flex-1 py-5 font-bold text-gray-400 transition-all";
+            }
         }
         function selectAmount(amt, btn) {
             selectedAmount = amt;
             document.getElementById('custom-input-area').classList.add('hidden');
-            document.querySelectorAll('.amt-btn').forEach(b => b.className = "amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold");
+            document.querySelectorAll('.amt-btn').forEach(b => b.className = "amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold transition-all");
             btn.className = "amt-btn bg-green-600 text-white py-4 rounded-2xl font-bold shadow-lg";
         }
         function toggleCustom() { document.getElementById('custom-input-area').classList.toggle('hidden'); selectedAmount = 0; }
