@@ -36,23 +36,16 @@
             </p>
             
             <div class="max-w-4xl mx-auto bg-black rounded-3xl overflow-hidden shadow-2xl aspect-video relative mb-16">
-                <video class="w-full h-full object-contain" autoplay muted loop controls>
+                <video class="w-full h-full object-cover" autoplay muted loop controls playsinline>
                     <source src="video.mp4.MOV" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
             </div>
 
             <div class="mb-20">
                 <h3 class="text-2xl font-black mb-8 text-gray-900 uppercase tracking-tighter">Our Little Brothers & Sisters</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                    <div class="relative group">
-                        <img src="image_0.png.PNG" class="rounded-3xl shadow-xl w-full h-80 object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-500" alt="Hope Cradle Visit">
-                        <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl text-xs font-bold shadow-sm">Meeting the kids</div>
-                    </div>
-                    <div class="relative group">
-                        <img src="image_1.png.JPG" class="rounded-3xl shadow-xl w-full h-80 object-cover grayscale-[30%] hover:grayscale-0 transition-all duration-500" alt="Support Mission">
-                        <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-xl text-xs font-bold shadow-sm">A future of hope</div>
-                    </div>
+                    <img src="image_0.png.PNG" class="rounded-3xl shadow-xl w-full h-80 object-cover" alt="Visit">
+                    <img src="image_1.png.JPG" class="rounded-3xl shadow-xl w-full h-80 object-cover" alt="Future">
                 </div>
             </div>
         </div>
@@ -71,50 +64,51 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
                 <h3 class="text-4xl font-black mb-6 text-gray-900">Your Kindness <br><span class="text-green-600">Changes Everything</span></h3>
-                <p class="text-gray-600 mb-8 font-medium italic">"A small seed of kindness grows into a forest of hope."</p>
                 <div class="space-y-6">
                     <div class="flex items-start gap-4">
-                        <div class="w-10 h-10 bg-green-100 flex items-center justify-center rounded-full text-green-600 font-bold shrink-0">1</div>
-                        <p class="text-sm leading-relaxed"><span class="font-bold block text-gray-900">Food & Nutrition</span> We buy bags of rice, oil, and essentials to ensure healthy meals.</p>
-                    </div>
-                    <div class="flex items-start gap-4">
+                       <div class="w-10 h-10 bg-green-100 flex items-center justify-center rounded-full text-green-600 font-bold shrink-0">1</div>
+                        <p class="text-sm lea ding-relaxed"><span class="font-bold block text-gray-900">Food & Nutrition</span> We buy bags of rice, oil, and essentials.</p>
+                            </div>
+
+                     <div class="flex items-start gap-4">
+
                         <div class="w-10 h-10 bg-green-100 flex items-center justify-center rounded-full text-green-600 font-bold shrink-0">2</div>
+
                         <p class="text-sm leading-relaxed"><span class="font-bold block text-gray-900">Education Support</span> We help pay for fees and supplies so every child can learn.</p>
+
                     </div>
+
                     <div class="flex items-start gap-4">
+
                         <div class="w-10 h-10 bg-green-100 flex items-center justify-center rounded-full text-green-600 font-bold shrink-0">3</div>
+
                         <p class="text-sm leading-relaxed"><span class="font-bold block text-gray-900">True Transparency</span> We post videos of every visit so you see the impact of your GHS.</p>
+
                     </div>
+
                 </div>
+
             </div>
+
+
 
             <div class="bg-white rounded-[2rem] shadow-2xl border border-gray-100 overflow-hidden">
                 <div class="flex border-b">
-                    <button onclick="showTab('money')" id="tab-money" class="flex-1 py-5 font-bold text-green-600 border-b-4 border-green-600 bg-green-50 transition-all">Donate GHS</button>
-                    <button onclick="showTab('items')" id="tab-items" class="flex-1 py-5 font-bold text-gray-400 hover:bg-gray-50 transition-all">Donate Items</button>
+                    <button onclick="showTab('money')" id="tab-money" class="flex-1 py-5 font-bold text-green-600 border-b-4 border-green-600 bg-green-50">Donate GHS</button>
+                    <button onclick="showTab('items')" id="tab-items" class="flex-1 py-5 font-bold text-gray-400">Donate Items</button>
                 </div>
-                <div class="p-10">
+                <div class="p-8 md:p-10">
                     <div id="content-money">
-                        <div class="grid grid-cols-2 gap-4 mb-8">
-                            <button onclick="selectAmount(10, this)" class="amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold hover:bg-green-600 hover:text-white transition-all">10</button>
-                            <button onclick="selectAmount(50, this)" class="amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold hover:bg-green-600 hover:text-white transition-all">50</button>
-                            <button onclick="selectAmount(100, this)" class="amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold hover:bg-green-600 hover:text-white transition-all">100</button>
-                            <button onclick="toggleCustom()" id="custom-btn" class="amt-btn border-2 border-gray-200 text-gray-400 py-4 rounded-2xl font-bold transition-all">Custom</button>
+                        <div class="grid grid-cols-2 gap-3 md:gap-4 mb-8">
+                            <button onclick="selectAmount(10, this)" class="amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold">10</button>
+                            <button onclick="selectAmount(50, this)" class="amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold">50</button>
+                            <button onclick="selectAmount(100, this)" class="amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold">100</button>
+                            <button onclick="toggleCustom()" id="custom-btn" class="amt-btn border-2 border-gray-200 text-gray-400 py-4 rounded-2xl font-bold">Custom</button>
                         </div>
                         <div id="custom-input-area" class="hidden mb-8">
-                            <input type="number" id="custom-amount" placeholder="Enter Amount in GHS" class="w-full p-5 border-2 border-green-600 rounded-2xl font-bold text-center outline-none text-xl">
+                            <input type="number" id="custom-amount" placeholder="Amount" class="w-full p-5 border-2 border-green-600 rounded-2xl font-bold text-center outline-none">
                         </div>
-                        <button onclick="payWithPaystack()" class="w-full bg-green-600 text-white py-5 rounded-2xl font-black text-xl shadow-lg hover:bg-green-700 active:scale-95 transition-all uppercase tracking-widest">
-                            Send My Donation
-                        </button>
-                    </div>
-                    <div id="content-items" class="hidden text-center py-6">
-                        <div class="text-6xl mb-6">📦</div>
-                        <h4 class="text-xl font-bold mb-3 text-gray-900">Food, Clothes or Supplies</h4>
-                        <p class="text-gray-500 text-sm mb-8 leading-relaxed">If you have physical items to give, click below and we will contact you immediately to arrange a pickup.</p>
-                        <a href="https://wa.me/233538335965?text=Hello! I want to donate items (food/clothes) to Hope Cradle." target="_blank" class="inline-block w-full bg-blue-500 text-white py-5 rounded-2xl font-black text-xl shadow-lg hover:bg-blue-600 active:scale-95 transition-all uppercase tracking-widest">
-                            Chat on WhatsApp
-                        </a>
+                        <button onclick="payWithPaystack()" class="w-full bg-green-600 text-white py-5 rounded-2xl font-black text-xl shadow-lg active:scale-95 transition-all">SEND DONATION</button>
                     </div>
                 </div>
             </div>
@@ -122,35 +116,24 @@
     </section>
 
     <section class="py-20 px-5 max-w-4xl mx-auto border-t border-gray-100">
-        <div class="flex justify-between items-end mb-12">
-            <div>
-                <h3 class="text-3xl font-black text-gray-900 mb-2">Community Support</h3>
-                <p class="text-gray-500 text-sm">Join others in sending love to the children.</p>
-            </div>
-            <div class="flex gap-8 items-center bg-gray-50 px-6 py-3 rounded-2xl border border-gray-100">
-                <button id="like-btn" class="flex items-center gap-2 group">
-                    <span class="text-2xl transition-transform group-active:scale-150">❤️</span>
-                    <span id="like-count" class="font-bold text-lg text-gray-700">0</span>
+        <div class="flex justify-between items-center mb-12">
+            <h3 class="text-2xl font-black text-gray-900">Community Support</h3>
+               <p class="text-gray-500 text-sm">Join others in sending love to the children.</p>
+            <div class="flex gap-4 items-center bg-gray-50 px-4 py-2 rounded-xl border border-gray-100">
+                <button id="like-btn" class="flex items-center gap-1">
+                    <span>❤️</span> <span id="like-count" class="font-bold">0</span>
                 </button>
-                <div class="w-[1px] h-6 bg-gray-200"></div>
-                <div class="flex items-center gap-2 text-gray-500">
-                    <span class="text-xl">👁️</span>
-                    <span id="view-count" class="text-sm font-bold">0</span>
-                </div>
+                <div class="text-gray-400 font-bold text-[10px] tracking-widest uppercase"><span id="view-count">0</span> views</div>
             </div>
         </div>
 
-        <div class="mb-16 bg-white p-8 rounded-[2.5rem] border border-gray-100 shadow-xl">
-            <h4 class="font-black text-lg mb-6 text-gray-800 uppercase tracking-tight">Leave a Prayer or Message</h4>
-            <div class="flex flex-col gap-4">
-                <input type="text" id="comment-name" placeholder="Your Full Name" class="w-full p-4 bg-gray-50 border border-transparent rounded-2xl outline-none focus:border-green-600 focus:bg-white transition-all font-medium">
-                <textarea id="comment-text" placeholder="Write your heartfelt message here..." class="w-full p-4 bg-gray-50 border border-transparent rounded-2xl outline-none focus:border-green-600 focus:bg-white h-32 transition-all font-medium"></textarea>
-                <button id="post-comment" class="bg-gray-900 text-white py-4 rounded-2xl font-black hover:bg-black transition-all shadow-lg active:scale-95">Post Message</button>
-            </div>
+        <div class="mb-12 bg-white p-6 rounded-[2rem] border border-gray-100 shadow-xl">
+            <input type="text" id="comment-name" placeholder="Your Full Name" class="w-full p-4 mb-4 bg-gray-50 rounded-xl outline-none focus:ring-2 focus:ring-green-600">
+            <textarea id="comment-text" placeholder="Write your heartfelt messafe here..." class="w-full p-4 mb-4 bg-gray-50 rounded-xl outline-none focus:ring-2 focus:ring-green-600 h-24"></textarea>
+            <button id="post-comment" class="w-full bg-gray-900 text-white py-4 rounded-xl font-bold">Post Message</button>
         </div>
 
-        <div id="comments-display" class="space-y-6">
-            </div>
+        <div id="comments-display" class="space-y-4"></div>
     </section>
 
     <footer class="bg-gray-950 text-white py-16 px-5 text-center">
@@ -169,42 +152,26 @@
     <script>
         let selectedAmount = 0;
         function showTab(type) {
-            const m = document.getElementById('content-money'), i = document.getElementById('content-items');
-            const mt = document.getElementById('tab-money'), it = document.getElementById('tab-items');
-            if (type === 'money') {
-                m.classList.remove('hidden'); i.classList.add('hidden');
-                mt.className = "flex-1 py-5 font-bold text-green-600 border-b-4 border-green-600 bg-green-50";
-                it.className = "flex-1 py-5 font-bold text-gray-400";
-            } else {
-                m.classList.add('hidden'); i.classList.remove('hidden');
-                it.className = "flex-1 py-5 font-bold text-green-600 border-b-4 border-green-600 bg-green-50";
-                mt.className = "flex-1 py-5 font-bold text-gray-400";
-            }
+            document.getElementById('content-money').classList.toggle('hidden', type !== 'money');
+            document.getElementById('tab-money').className = type === 'money' ? "flex-1 py-5 font-bold text-green-600 border-b-4 border-green-600 bg-green-50" : "flex-1 py-5 font-bold text-gray-400";
         }
         function selectAmount(amt, btn) {
             selectedAmount = amt;
             document.getElementById('custom-input-area').classList.add('hidden');
-            document.getElementById('custom-amount').value = '';
-            document.querySelectorAll('.amt-btn').forEach(b => b.className = "amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold transition-all");
+            document.querySelectorAll('.amt-btn').forEach(b => b.className = "amt-btn border-2 border-green-600 text-green-600 py-4 rounded-2xl font-bold");
             btn.className = "amt-btn bg-green-600 text-white py-4 rounded-2xl font-bold shadow-lg";
         }
-        function toggleCustom() {
-            selectedAmount = 0;
-            document.getElementById('custom-input-area').classList.toggle('hidden');
-            document.getElementById('custom-amount').focus();
-        }
+        function toggleCustom() { document.getElementById('custom-input-area').classList.toggle('hidden'); selectedAmount = 0; }
         function payWithPaystack() {
-            const finalAmt = document.getElementById('custom-amount').value || selectedAmount;
-            if (finalAmt <= 0) { alert("Please select or enter an amount first!"); return; }
-            let handler = PaystackPop.setup({
+            const amt = document.getElementById('custom-amount').value || selectedAmount;
+            if(!amt) return alert("Select amount");
+            PaystackPop.setup({
                 key: 'pk_live_2908e7dd6bd5ffc2bb227b53642bbc89ef3463fb',
                 email: 'donor@hopecradlegh.org',
-                amount: finalAmt * 100,
+                amount: amt * 100,
                 currency: 'GHS',
-                ref: 'HC-' + Math.floor((Math.random() * 1000000000) + 1),
-                callback: (r) => { alert('God bless you! Your gift has been received.'); location.reload(); }
-            });
-            handler.openIframe();
+                callback: () => { alert('Success!'); location.reload(); }
+            }).openIframe();
         }
     </script>
 
@@ -227,7 +194,6 @@
 
         set(ref(db, 'stats/views'), increment(1));
         onValue(ref(db, 'stats/views'), (s) => document.getElementById('view-count').innerText = s.val() || 0);
-
         document.getElementById('like-btn').onclick = () => set(ref(db, 'stats/likes'), increment(1));
         onValue(ref(db, 'stats/likes'), (s) => document.getElementById('like-count').innerText = s.val() || 0);
 
@@ -237,23 +203,19 @@
             if(name && text) {
                 push(ref(db, 'comments'), { name, text, time: Date.now() });
                 document.getElementById('comment-text').value = "";
-            } else { alert("Please share your name and message."); }
+            }
         };
 
-        onValue(ref(db, 'comments'), (s) => {
+        onValue(ref(db, 'comments'), (snapshot) => {
             const display = document.getElementById('comments-display');
             display.innerHTML = "";
-            const data = [];
-            s.forEach(child => { data.unshift(child.val()); });
-            data.forEach(item => {
-                display.innerHTML += `
-                    <div class="bg-white p-6 rounded-3xl border border-gray-100 shadow-sm transition-all hover:shadow-md">
-                        <div class="flex items-center gap-2 mb-2">
-                            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-                            <p class="font-black text-xs text-gray-900 uppercase tracking-widest">${item.name}</p>
-                        </div>
-                        <p class="text-gray-600 text-sm italic leading-relaxed">"${item.text}"</p>
-                    </div>`;
+            snapshot.forEach((child) => {
+                const comment = child.val();
+                display.innerHTML = `
+                    <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+                        <p class="font-bold text-[10px] text-green-600 uppercase mb-1">${comment.name}</p>
+                        <p class="text-gray-600 text-sm italic">"${comment.text}"</p>
+                    </div>` + display.innerHTML;
             });
         });
     </script>
